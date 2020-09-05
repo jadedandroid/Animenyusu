@@ -2,14 +2,15 @@ class AnimesController < ApplicationController
 
 
     def new
-
+        @anime = Anime.new
     end
 
     def create
-
+        @anime = Anime.create(anime_params)
     end
-    def index
 
+    def index 
+        @anime = Anime.all
     end
 
     def show
@@ -23,8 +24,8 @@ class AnimesController < ApplicationController
 
     end
 
-    def 
-
+    def anime_params
+        params.require(:animes).permit(:name, :description)
     end
 
     def 

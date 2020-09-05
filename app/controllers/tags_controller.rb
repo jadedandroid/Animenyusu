@@ -1,25 +1,25 @@
 class TagsController < ApplicationController
     def index
-        @cat = 
+        @tagged = @current_user.liked_animes 
 
     end
     def new
-
-    end
-    def show
+        @tag = Tag.new
+        @user = User.all
+        @anime = Anime.all - @current_user.animes
 
     end
 
     def create
-
+        @tag = Tag.tagged.create(tag_params)
+        redirect_to user_path(@current_user)
     end
-    def update
 
+    private
+    def tag_params
+        params.require(:tag).permit(:user_id, :anime_id :genre)
     end
-    def edit
+    
 
-    end
-    def destroy
 
-    end
 end

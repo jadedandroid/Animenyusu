@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
     belongs_to :User
     has_many :comments
+    validates :char_limit
 
     def char_limit
         words_number = self.content.split().length

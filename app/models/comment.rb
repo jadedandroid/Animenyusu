@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :User
-  validates :word_limit
+  validates :char_limit
 
 
 def char_limit
