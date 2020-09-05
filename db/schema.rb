@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_05_003044) do
+ActiveRecord::Schema.define(version: 2020_09_05_003004) do
 
   create_table "animes", force: :cascade do |t|
     t.string "name"
@@ -45,16 +45,6 @@ ActiveRecord::Schema.define(version: 2020_09_05_003044) do
     t.index ["User_id"], name: "index_posts_on_User_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "title"
-    t.integer "User_id", null: false
-    t.integer "Anime_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["Anime_id"], name: "index_tags_on_Anime_id"
-    t.index ["User_id"], name: "index_tags_on_User_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -66,6 +56,4 @@ ActiveRecord::Schema.define(version: 2020_09_05_003044) do
   add_foreign_key "liked_animes", "Users"
   add_foreign_key "liked_animes", "animes"
   add_foreign_key "posts", "Users"
-  add_foreign_key "tags", "Animes"
-  add_foreign_key "tags", "Users"
 end

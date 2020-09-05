@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
     def index
-        @category = 
+        @cat = 
 
     end
     def new
