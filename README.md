@@ -1,5 +1,8 @@
 # README
 
+Post Anime blogs and articles and keep up with your favorite Anime!
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
