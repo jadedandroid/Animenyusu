@@ -13,22 +13,23 @@ class AnimesController < ApplicationController
         @anime = Anime.all
     end
 
-    def show
+    # def show
 
-    end
+    # end
 
 
     private 
     
-    def update
+    # def update
 
-    end
+    # end
 
     def anime_params
         params.require(:animes).permit(:name, :description)
     end
 
-    def 
+    # def destroy
 
-    end
+    # end
+
 end

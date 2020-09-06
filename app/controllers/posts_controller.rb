@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     end
     def update
         @post.update(post_params)
-        redirect_to word_path(@word)
+        redirect_to post_path(@post)
     end
 
     def destroy
