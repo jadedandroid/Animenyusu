@@ -1,0 +1,7 @@
+<h1> Browse through the list of Users to meet some new anime Nakama</h1>
+<ul>
+    <% @user.map do |user_var|%>
+        <li> <%= link_to user_var.username, user_path(user_var.id) %> </li>
+    <%end%>
+
+</ul>

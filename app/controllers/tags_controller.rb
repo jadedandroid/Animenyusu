@@ -7,7 +7,6 @@ class TagsController < ApplicationController
         @tag = Tag.new
         @user = User.all
         @anime = Anime.all - @current_user.animes
-
     end
 
     def create

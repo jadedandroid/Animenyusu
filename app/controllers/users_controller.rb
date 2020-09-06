@@ -26,9 +26,9 @@ class UsersController < ApplicationController
         @user = User.all
 
     end
+
     def new
     @user = User.new
-
     end
 
     def create
@@ -39,18 +39,17 @@ class UsersController < ApplicationController
         else
             flash[:errors] = @user.errors.full_messages
             redirect_to new_user_path
-
     end
    
     def edit
         @user = @current_user
-
     end
+    
     def destroy
         @user.destroy
         redirect_to login_path
-
     end
+
     private
     def student_params
         params.require(:user).permit(:username, :password)

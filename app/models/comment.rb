@@ -4,9 +4,10 @@ class Comment < ApplicationRecord
 
 
 def char_limit
-  words_number = self.content.split().length
-  if words_number < 6 || words_number > 80
-    self.errors.add(:content, "all comments must be between 6 and 80 words long")
+  char_number = self.content.split("").length
+  if char_number < 6 || char_number > 120
+    self.errors.add(:content, "all comments must be between 6 and 120 char long")
   end
+end
 
 end
