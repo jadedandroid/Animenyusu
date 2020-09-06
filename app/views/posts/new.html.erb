@@ -1,1 +1,10 @@
-<h1> Make apost m </h1>
+<h1> Make a Post </h1>
+
+<%= form_for @post do |post_var| %>
+    <%= post_var.label :title %>
+    <%= post_var.text_field :title %>
+    <%= post_var.label :content %>
+    <%= post_var.text_field :content %>
+    
+    <%= post_var.submit "Share your post!" %>
+<% end %>
