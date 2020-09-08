@@ -24,11 +24,14 @@ class PostsController < ApplicationController
         redirect_to user_path
     end
 
+    def get_post
+        @post = Post.find(params[:id])
+    end
+
+    private
+
     def post_params
         params.require(:posts).permit(:title, :content)
     end
 
-    def get_post
-        @post = Post.find(params[:id])
-    end
 end
