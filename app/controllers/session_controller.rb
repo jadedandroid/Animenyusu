@@ -5,18 +5,18 @@ class SessionsController < ApplicationController
       # cookies[:view_count] = nil
       session.delete(:view_count)
   
-      redirect_back fallback_location: movies_path
+      redirect_back fallback_location: anime_path
     end 
   
     def new 
     end
   
     def create 
-      user = User.find_by(name: params[:session][:name])
+      @user = User.find_by(name: params[:session][:name])
   
-      if user && user.authenticate(params[:session][:password])
-        session[:user_id] = user.id 
-        redirect_to user 
+      if @user && @user.authenticate(params[:session][:password])
+        session[:@user_id] = user.id 
+        redirect_to user_path
       else 
         flash[:error] = "username or password is incorrect"
         redirect_to new_login_path
