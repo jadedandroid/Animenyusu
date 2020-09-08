@@ -15,7 +15,6 @@ class AnimesController < ApplicationController
 
     def show
         @anime =Anime.find(params[:id])
-
     end
 
 

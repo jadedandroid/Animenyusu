@@ -27,7 +27,6 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
-
     end
     def show
     @user = User.find(params[:id])
@@ -69,6 +68,7 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:username, :password)
     end
+    
     def get_user
         @user = User.find(params[:id])
     end
