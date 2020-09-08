@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-    has_many :Lke_anime
-    has_many :Anime, through: :Liked_Anime
-    has_many :post
-    validates :userame, presence: true, uniqueness: true
+    has_many :liked_animes
+    has_many :animes, through: :liked_animes
+    has_many :posts
+    validates :username, presence: true, uniqueness: true
 
     has_secure_password
     
-    def userame
-        self.username
-    end
+    # def username
+    #     self.username
+    # end
 end

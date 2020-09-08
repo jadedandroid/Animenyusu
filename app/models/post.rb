@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    belongs_to :User
+    belongs_to :user
     has_many :comments
     validates :word_limit
 

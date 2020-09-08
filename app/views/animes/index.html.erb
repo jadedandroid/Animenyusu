@@ -1,3 +1,8 @@
-<h1> Anime index page! </h1>
+<h1> Browse all your favourite Anime on one page! </h1>
 
-<%= 
+<ul>
+<% @anime.map do |series|%>
+    <li> <%= link_to series.name, anime_path(series.id) %> </li>
+<%end%>
+
+</ul>

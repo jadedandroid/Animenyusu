@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+   before_action :get_user, only: [:show, :edit, :update, :destroy]
+  # skip_before_action :authorized_to_see_page, only: [:login, :handle_login, :new, :create]
 
 
   def login
@@ -6,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def handle_login
-    @user = User.find_by(Username: params[:Username])
+    @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       # If the User is found AND their password matches
       session[:user_id] = @user.id
@@ -16,6 +18,7 @@ class UsersController < ApplicationController
       redirect_to login_path
     end
   end
+  
 
   def logout
     session[:user_id] = nil
@@ -23,9 +26,18 @@ class UsersController < ApplicationController
   end
 
     def index
-        @user = User.all
+        @users = User.all
 
     end
+    def show
+    @user = User.find(params[:id])
+    # if @user === @current_user
+    #   render :show
+    # else 
+    #   flash[:error] = "can only see your profile"
+    #   redirect_to users_path
+    # end 
+  end
 
     def new
     @user = User.new
@@ -33,12 +45,15 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        if @user valid?
+        #  if @user valid? do
             session[:user_id]= @user_id
-            redirect_to user_path
-        else
-            flash[:errors] = @user.errors.full_messages
-            redirect_to new_user_path
+            redirect_to @user
+         
+      #   else
+      #       flash[:errors] = @user.errors.full_messages
+      #       redirect_to new_user_path
+      #   end
+      # end
     end
    
     def edit
@@ -51,9 +66,10 @@ class UsersController < ApplicationController
     end
 
     private
-    def student_params
+    def user_params
         params.require(:user).permit(:username, :password)
     end
-    def find_user
+    def get_user
         @user = User.find(params[:id])
+    end
 end

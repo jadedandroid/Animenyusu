@@ -1,6 +1,6 @@
 class Tag < ApplicationRecord
-  belongs_to :User
-  belongs_to :Anime
+  belongs_to :user
+  belongs_to :anime
 
   def genres
 

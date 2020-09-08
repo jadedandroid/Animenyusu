@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
             @current_user = User.find_by(id: session[:user_id])
         end
     
-        # def check_and_see_if_someone_is_logged_in?
-        #     !set_current_user.nil?
-        # end
+        def check_and_see_if_someone_is_logged_in?
+            !set_current_user.nil?
+        end
     
         # def authorized_to_see_page
         #     redirect_to login_path unless check_and_see_if_someone_is_logged_in?

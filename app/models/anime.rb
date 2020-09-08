@@ -1,8 +1,8 @@
 class Anime < ApplicationRecord
-    has_many :Liked_animes
+    has_many :liked_animes
     has_many :tags
-    has_many :Users, through: :Liked_anime
-    has_many :Posts, through: :tags
+    has_many :users, through: :liked_anime
+    has_many :posts, through: :tags
 
     
 end
