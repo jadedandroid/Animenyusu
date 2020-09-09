@@ -3,17 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title> Anime index page </title>
-  <!-- <link rel="stylesheet" href="./animes.css"> -->
 </head>
 <body>
     <header>
         <h1> Browse all your favourite Anime on one page! </h1>
     </header>
-    <ul>
-    <% @anime.map do |series|%>
-        <li> <%= link_to series.name, anime_path(series.id) %> </li>
-    <%end%>
-    </ul>
-
+    <table>
+        <tr>
+            <% @anime.map do |series|%>
+                <td> <%= link_to series.name, anime_path(series.id) %> </td>
+            <%end%>
+        </tr>
+        <tr>
+                <% @anime.map do |series|%>
+                    <td> <%= link_to series.description, anime_path(series.id) %> </td>
+                <%end%>
+        </tr>
+    </table>
 </body>
 </html>
