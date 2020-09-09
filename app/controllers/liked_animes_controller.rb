@@ -11,9 +11,9 @@ class LikedAnimesController < ApplicationController
     end
 
     def create
-        @like = Liked_anime.new(liked_params)
-        redirect_to user_path(@current_user)
-    end
+        @like = Liked_anime.create(liked_params)
+        redirect_to animes_path
+    end 
 
     def show
         @like = Liked_anime.find(params[:id])
@@ -24,6 +24,7 @@ class LikedAnimesController < ApplicationController
         @like.destroy
         redirect_to user_path(@current_user)
     end 
+    
     private
 
     def liked_params

@@ -8,8 +8,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <h1> Are you a fan, do you know the best anime in the land </h1>
 
   <body>
+  <div class='nav'> 
+    <span><h1>Anime new, Anime used, Anime news </h1></span>
+    </div> 
+    <ul>
+        <li><%= link_to 'Anime land', animes_path %></li>
+        <li><%= link_to 'User Home', users_path %></li>
+        <li><%= link_to 'add to favourite', liked_animes_path %></li>
+        <li><%= link_to 'Make a new Post', posts_path %></li>
+
     <%= yield %>
   </body>
 </html>

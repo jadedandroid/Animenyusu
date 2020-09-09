@@ -1,0 +1,9 @@
+<h1> ADD an Anime selection to your list of Faves! </h1>
+
+<%= form_for @liked_anime do |a| %>
+   <%= a.label :anime_id %>
+   <%= a.collection_select :anime_id, :@anime, :id, :anime_selection %>
+   <%= a.label :rating %>
+   <%= f.collection_select :rating, (1...6).to_a, :itself, :itself %> 
+   <%= a.submit %>
+   <%= end %>

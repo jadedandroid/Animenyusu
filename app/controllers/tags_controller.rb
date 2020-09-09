@@ -1,22 +1,22 @@
 class TagsController < ApplicationController
     def index
-        @tagged = @current_user.liked_animes 
-
+        @tags = Tag.all
     end
+
     def new
         @tag = Tag.new
-        @user = User.all
-        @anime = Anime.all - @current_user.animes
     end
 
     def create
-        @tag = Tag.tagged.create(tag_params)
-        redirect_to user_path(@current_user)
+        @tag = Tag.create(tag_params)
     end
 
+    def show
+        @tag = Tag.all
+    end
     private
     def tag_params
-        params.require(:tag).permit(:user_id, :anime_id :genre)
+        params.require(:tag).permit(:genre)
     end
     
 
