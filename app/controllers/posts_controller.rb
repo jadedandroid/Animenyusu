@@ -2,12 +2,15 @@ class PostsController < ApplicationController
     def index 
         @post = Post.all
     end
+
     def new
         @post = Post.new
+        @anime = Anime.all
+        @tag = Tag.all
     end
 
     def show
-
+        @post = @current_post
     end
 
     def create
@@ -15,7 +18,8 @@ class PostsController < ApplicationController
         redirect_to posts_path
     end
     def update
-        @post.update(post_params)
+        @post = Post.all.find(params[:id])
+        @post.update(params.require(:posts).permit(:title, :content))
         redirect_to post_path(@post)
     end
 
@@ -25,7 +29,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-        params.require(:posts).permit(:title, :content)
+        params.require(:posts).permit(:title, :content, :anime_id, :tag_id)
     end
 
     def get_post
