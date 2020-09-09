@@ -1,5 +1,5 @@
 class AnimesController < ApplicationController
-
+    skip_before_action :authorized, only: [:new, :create]
 
     def new
         @anime = Anime.new

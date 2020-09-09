@@ -3,7 +3,7 @@ class Post < ApplicationRecord
     belongs_to :tag
     belongs_to :anime
     has_many :comments
-    validates :word_limit
+    #validates :word_limit
 
     def word_limit
         words_number = self.content.split().length

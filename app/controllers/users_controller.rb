@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
    before_action :get_user, only: [:show, :edit, :update, :destroy]
-  # skip_before_action :authorized_to_see_page, only: [:login, :handle_login, :new, :create]
+   skip_before_action :authorized_to_see_page, only: [:login, :handle_login, :new, :create]
 
 
   def login
@@ -32,7 +32,6 @@ class UsersController < ApplicationController
     def show
     @user = User.find(params[:id])
     # if @user === @current_user
-    #   render :show
     # else 
     #   flash[:error] = "can only see your profile"
     #   redirect_to users_path

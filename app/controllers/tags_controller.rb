@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+    skip_before_action :authorized, only: [:new, :create]
+    
     def index
         @tags = Tag.all
     end

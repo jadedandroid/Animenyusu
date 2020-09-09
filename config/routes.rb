@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :animes
   resources :tags, only: [:index, :show]
   resources :comments
-  resources :posts
+  resources :posts, only: [:index, :new, :update, :show]
   resources :liked_animes
   
   
