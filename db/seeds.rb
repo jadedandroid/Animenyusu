@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Anime.destroy_all
+Anime.reset_pk_sequence
 User.destroy_all
+User.reset_pk_sequence
 
 #Anime
 yu_yu_hakusho = Anime.create(name: "Yu Yu Hakusho", description: "Shounen")

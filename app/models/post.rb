@@ -10,9 +10,9 @@ class Post < ApplicationRecord
         if words_number < 30 || words_number > 800
           self.errors.add(:content, "all posts must be between 6 and 800 words long")
         end
-
     end
 
+    
 
 end
 

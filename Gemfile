@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Yarn
 gem 'yarn', '~> 0.1.1'
+
+# Reset PK Sequence
+gem 'activerecord-reset-pk-sequence', '~> 0.2.0'

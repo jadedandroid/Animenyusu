@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorized, only: [:new, :create]
+    #skip_before_action :authorized, only: [:new, :create]
   
     def reset_page_view_cookie
       # cookies[:view_count] = nil

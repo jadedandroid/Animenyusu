@@ -19,7 +19,6 @@ class LikedAnimesController < ApplicationController
         @like = Liked_anime.find(params[:id])
     end
     
-
     def destroy
         @like.destroy
         redirect_to user_path(@current_user)
