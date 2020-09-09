@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
    before_action :get_user, only: [:show, :edit, :update, :destroy]
-   #skip_before_action :authorized, only: [:login, :handle_login, :new, :create]
+   # skip_before_action :authorized, only: [:login, :handle_login, :new, :create]
 
 
   def login
@@ -43,15 +43,14 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        #  if @user valid? do
+         if @user.valid? 
             session[:user_id]= @user_id
             redirect_to @user
          
-      #   else
-      #       flash[:errors] = @user.errors.full_messages
-      #       redirect_to new_user_path
-      #   end
-      # end
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_to new_user_path
+         end
     end
    
     def edit

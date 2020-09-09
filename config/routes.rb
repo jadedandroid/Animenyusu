@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
 
   get '/new', to: 'sessions#new', as: 'logged_in'
-  post '/create', to: 'sessions#create', as: 'login'
-  post "/login_form", to: "users#handle_login"
+  # post '/create', to: 'sessions#create', as: 'login'
+  # post "/login_form", to: "users#handle_login"
   delete "/logout", to: "users#logout", as: "logout"
 end
