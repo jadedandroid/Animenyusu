@@ -1,6 +1,5 @@
 class AnimesController < ApplicationController
 
-
     def new
         @anime = Anime.new
     end

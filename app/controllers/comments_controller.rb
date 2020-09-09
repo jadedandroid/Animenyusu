@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
         @comment = Comment.create(comment_params) 
         redirect_to post_path
     end
+    
     def update
         @comment.update(comment_params)
         redirect_to post_path
