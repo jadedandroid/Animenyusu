@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Anime.destroy_all
+User.destroy_all
 
 #Anime
 yu_yu_hakusho = Anime.create(name: "Yu Yu Hakusho", description: "Shounen")
@@ -20,4 +21,5 @@ yuri_on_ice = Anime.create(name: "Yuri on Ice", description: "Romance")
 fairytail = Anime.create(name: "Fairytail", description: "Shonen")
 the_seven_deadly_sins = Anime.create(name: "The Seven Deadly Sins", description: "Fantasy")
 
-
+#User
+alex = User.create(username: "Alex", password_digest: "password")
