@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
             !set_current_user.nil?
         end
     
-        # def authorized_to_see_page
-        #     redirect_to login_path unless check_and_see_if_someone_is_logged_in?
-        # end
+        def authorized_to_see_page
+            redirect_to login_path unless check_and_see_if_someone_is_logged_in?
+        end
     
 end

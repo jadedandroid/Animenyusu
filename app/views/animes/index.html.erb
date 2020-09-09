@@ -9,15 +9,11 @@
     <table>
         <tr>
             <% @anime.map do |series|%>
-                <tr><td> <%= link_to series.name, anime_path(series.id) %> </td>
+                <tr>
+                <td> <%= link_to series.name, anime_path(series.id) %> </td>
                 <td> <%= link_to series.description, anime_path(series.id) %> </td>
-                </tr><%end%>
-        
-        <!-- <tr>
-                <% @anime.map do |series|%>
-                    <td> <%= link_to series.description, anime_path(series.id)%>< </td>
+                </tr>
                 <%end%>
-        </tr> -->
     </table>
 </body>
 </html>
