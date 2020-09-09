@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
    before_action :get_user, only: [:show, :edit, :update, :destroy]
-   skip_before_action :authorized_to_see_page, only: [:login, :handle_login, :new, :create]
+   #skip_before_action :authorized, only: [:login, :handle_login, :new, :create]
 
 
   def login
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
-
     end
     def show
     @user = User.find(params[:id])

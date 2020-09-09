@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-    skip_before_action :authorized, only: [:new, :create]
+    #skip_before_action :authorized, only: [:new, :create]
     def index
         @comments = Comments.all
     end
@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
         @comment = Comment.create(comment_params) 
         redirect_to post_path
     end
+    
     def update
         @comment.update(comment_params)
         redirect_to post_path

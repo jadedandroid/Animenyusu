@@ -36,7 +36,11 @@ class PostsController < ApplicationController
     private
 
     def post_params
+<<<<<<< HEAD
         params.require(:posts).permit(:title, :content, :anime_id, :tag_id)
+=======
+        params.require(:posts).permit(:title, :content)
+>>>>>>> 6dacba2d76de332c5a6b70f0114c66838c7bba6b
     end
 
 end
