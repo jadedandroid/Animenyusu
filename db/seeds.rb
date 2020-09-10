@@ -13,7 +13,7 @@ Post.destroy_all
 Post.reset_pk_sequence 
 
 #Anime
-yu_yu_hakusho = Anime.create(name: "Yu Yu Hakusho", description: "Shounen, With the support of his girlfriend and friends, Yusuke learns to accept that he is a member of both the <strinke-through>straight and gay</strike-through> human and demon community")
+yu_yu_hakusho = Anime.create(name: "Yu Yu Hakusho", description: "Shounen, With the support of his girlfriend and friends, Yusuke learns to accept that he is a member of both the <strinke-through>straight and lgbt</strike-through> human and demon community")
 dragon_ball = Anime.create(name: "Dragon Ball", description: "Shounen, Dragon Ball follows the adventures of the protagonist Goku, a strong naive boy who, upon meeting Bulma, sets out to gather the seven wish-granting Dragon Balls.")
 sailor_moon = Anime.create(name: "Sailor Moon", description: "Shoujo, Sailor Moon who fights with friends to protect humanity")
 gundam = Anime.create(name: "Gundam", description: "Mecha, Commentary on the futility of war and the Cold War arms race - and big robots fight!")
