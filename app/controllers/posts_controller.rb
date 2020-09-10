@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+    #skip_before_action :authorized, only: [:new, :create]
+    
     def index 
         @post = Post.all
     end
@@ -17,6 +19,7 @@ class PostsController < ApplicationController
         @post = Post.create(post_params)
         redirect_to posts_path
     end
+
     def update
         @post = Post.all.find(params[:id])
         @post.update(params.require(:posts).permit(:title, :content))

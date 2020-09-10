@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   resources :animes
   resources :tags, only: [:index, :show]
   resources :comments
-  resources :posts
+  # resources :posts
   resources :liked_animes
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # GET THE USER THE LOGIN FORM
+
+  get "/posts/new", to: "posts#new", as: "new_post"
+  post "/posts", to: "posts#create"
   
 
 

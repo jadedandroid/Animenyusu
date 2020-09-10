@@ -27,6 +27,6 @@ class LikedAnimesController < ApplicationController
     private
 
     def liked_params
-        params.require(:Liked_animes).permit(:anime_id)
+        params.require(:liked_animes).permit(:anime_id)
     end
 end
