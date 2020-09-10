@@ -1,7 +1,7 @@
 class LikedAnimesController < ApplicationController
     
     def index
-        @likes = @current_user.Liked_anime
+        @likes = Liked_anime.all
     end
 
     def new
@@ -21,7 +21,7 @@ class LikedAnimesController < ApplicationController
     
     def destroy
         @like.destroy
-        redirect_to user_path(@current_user)
+        redirect_to user_path
     end 
     
     private
