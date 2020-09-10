@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-   before_action :get_user, only: [:show, :edit, :update, :destroy]
-   skip_before_action :authorized_to_see_page, only: [:login, :handle_login, :new, :create]
-
-
+  before_action :get_user, only: [:show, :edit, :update, :destroy]
+  # skip_before_action :authorized, only: [:login, :handle_login, :new, :create]
   def login
     @error = flash[:error]
   end
@@ -19,17 +17,16 @@ class UsersController < ApplicationController
     end
   end
   
-
   def logout
     session[:user_id] = nil
     redirect_to login_path
   end
 
-    def index
-        @users = User.all
+  def index
+    @users = User.all
+  end
 
-    end
-    def show
+  def show
     @user = User.find(params[:id])
     # if @user === @current_user
     # else 
@@ -38,37 +35,36 @@ class UsersController < ApplicationController
     # end 
   end
 
-    def new
+  def new
     @user = User.new
-    end
+  end
 
-    def create
-        @user = User.create(user_params)
-        #  if @user valid? do
-            session[:user_id]= @user_id
-            redirect_to @user
-         
-      #   else
-      #       flash[:errors] = @user.errors.full_messages
-      #       redirect_to new_user_path
-      #   end
-      # end
+  def create
+    @user = User.create(user_params)
+      if @user.valid?
+        session[:user_id]= @user_id
+        redirect_to @user
+      # else
+      #   flash[:errors] = @user.errors.full_messages
+      #   redirect_to new_user_path
+      end
     end
    
-    def edit
-        @user = @current_user
-    end
+  def edit
+    @user = @current_user
+  end
     
-    def destroy
-        @user.destroy
-        redirect_to login_path
-    end
+  def destroy
+    @user.destroy
+    redirect_to login_path
+  end
 
-    private
-    def user_params
-        params.require(:user).permit(:username, :password)
-    end
-    def get_user
-        @user = User.find(params[:id])
-    end
+  private
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
+    
+  def get_user
+    @user = User.find(params[:id])
+  end
 end

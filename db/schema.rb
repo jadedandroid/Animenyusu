@@ -21,45 +21,39 @@ ActiveRecord::Schema.define(version: 2020_09_05_003044) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "User_id", null: false
-    t.integer "Post_id", null: false
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Post_id"], name: "index_comments_on_Post_id"
-    t.index ["User_id"], name: "index_comments_on_User_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "liked_animes", force: :cascade do |t|
     t.integer "rating"
     t.integer "anime_id", null: false
-    t.integer "User_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["User_id"], name: "index_liked_animes_on_User_id"
     t.index ["anime_id"], name: "index_liked_animes_on_anime_id"
+    t.index ["user_id"], name: "index_liked_animes_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.integer "User_id", null: false
-    t.integer "Tag_id", null: false
-    t.integer "Anime_id", null: false
+    t.integer "tag_id", null: false
+    t.integer "anime_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Anime_id"], name: "index_posts_on_Anime_id"
-    t.index ["Tag_id"], name: "index_posts_on_Tag_id"
-    t.index ["User_id"], name: "index_posts_on_User_id"
+    t.index ["anime_id"], name: "index_posts_on_anime_id"
+    t.index ["tag_id"], name: "index_posts_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "genre"
-    t.integer "Post_id", null: false
-    t.integer "Anime_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Anime_id"], name: "index_tags_on_Anime_id"
-    t.index ["Post_id"], name: "index_tags_on_Post_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,13 +63,10 @@ ActiveRecord::Schema.define(version: 2020_09_05_003044) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "comments", "Posts"
-  add_foreign_key "comments", "Users"
-  add_foreign_key "liked_animes", "Users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "liked_animes", "animes"
-  add_foreign_key "posts", "Animes"
-  add_foreign_key "posts", "Tags"
-  add_foreign_key "posts", "Users"
-  add_foreign_key "tags", "Animes"
-  add_foreign_key "tags", "Posts"
+  add_foreign_key "liked_animes", "users"
+  add_foreign_key "posts", "animes"
+  add_foreign_key "posts", "tags"
 end

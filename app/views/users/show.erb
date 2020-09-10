@@ -1,9 +1,11 @@
-<h1>Show me the user </h1>
+<h1> Show me the user </h1>
 
 <h2> <%= @user.username %> </h2>
 
 <% @user.liked_animes.each do |liked_anime| %>
-    <h3><%= link_to animes.liked_anime.name, anime_path(anime.liked_anime) %></h3>
-    <p><%= animes.liked_anime.content %></p>
-    <hr>
-  <% end  %>
+  <h3><%= link_to animes.liked_anime.name, anime_path(anime.liked_anime) %></h3>
+  <p><%= animes.liked_anime.content %></p>
+  <hr>
+<% end  %>
+
+<a href="/posts/new">Make New Post</a>

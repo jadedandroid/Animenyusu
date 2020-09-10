@@ -1,8 +1,19 @@
-<h1> Browse all your favourite Anime on one page! </h1>
-
-<ul>
-<% @anime.map do |series|%>
-    <li> <%= link_to series.name, anime_path(series.id) %> </li>
-<%end%>
-
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Anime index page </title>
+</head>
+<body>
+    <h1> Are you a fan, do you know the best anime in the land </h1>
+    <table>
+        <tr>
+            <% @anime.map do |series|%>
+                <tr>
+                <td> <%= link_to series.name, anime_path(series.id) %> </td>
+                <td> <%= link_to series.description, anime_path(series.id) %> </td>
+                </tr>
+                <%end%>
+    </table>
+</body>
+</html>

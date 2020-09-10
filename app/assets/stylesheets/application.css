@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .nav{
+    text-align: center;
+    }
+
+#banner{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}

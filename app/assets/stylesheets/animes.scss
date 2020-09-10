@@ -1,3 +1,16 @@
 // Place all the styles related to the Animes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body{
+    text-align: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(142deg, rgba(2,0,36,0.66) 0%, rgba(191,22,172,0.31556372549019607) 76%);
+    }
+
+table{
+    text-align: left;
+    }
+
+h1{color:black;}
+h2{font-style: italic}
