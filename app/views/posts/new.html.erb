@@ -7,12 +7,11 @@
     <%= p.label :content %>
     <%= p.text_field :content %>
 
-    <%= p.label :tag_id %>
-    <%= p.collection_select :tag_id, @tag, :id, :genre%>
-
     <%= p.label :anime_id %>
-    <%= p.collection_select :anime_id, @anime, :id, :discription %>
+    <%= p.collection_select :anime_id, @animes, :id, :name %>
 
+    <%= p.label :tag_id %>
+    <%= p.collection_select :tag_id, @tags, :id, :genre%>
     
     <%= p.submit "Share your post!" %>
 <% end %>

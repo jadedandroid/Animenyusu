@@ -1,6 +1,6 @@
 <h1> Community Post Board </h1>
 <ul>
         <%=@post.map do |post_var| %>
-        <%= link_to post_var.title, post_path(post_var.id) %>
+        <%= link_to post_var.title, post_path(post_var.id) %><br>
         <% end %>
 </ul>

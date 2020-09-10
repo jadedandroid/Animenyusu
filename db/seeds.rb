@@ -28,5 +28,8 @@ the_seven_deadly_sins = Anime.create(name: "The Seven Deadly Sins", description:
 #User
 alex = User.create(username: "Alex", password_digest: "password")
 
-#Posts
-sailor_moon_blog = Post.create(title: "Neptune and Uranus", content: "fan favorites", User_id: 1)
+#Post
+sailor_moon_blog = Post.create(title: "Neptune and Uranus", content: "true love", anime_id: 3, tag_id: 1)
+
+#Tag
+shounen = Tag.create(genre: "Shounen")

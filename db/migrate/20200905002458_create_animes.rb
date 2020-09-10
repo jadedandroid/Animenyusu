@@ -3,6 +3,7 @@ class CreateAnimes < ActiveRecord::Migration[6.0]
     create_table :animes do |t|
       t.string :name
       t.text :description
+      
   
       t.timestamps
     end

@@ -7,12 +7,12 @@ class PostsController < ApplicationController
 
     def new
         @post = Post.new
-        @anime = Anime.all
-        @tag = Tag.all
+        @animes = Anime.all
+        @tags = Tag.all
     end
 
     def show
-        @post = @current_post
+        @post = Post.find(params[:id])
     end
 
     def create
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:posts).permit(:title, :content, :anime_id, :tag_id)
+        params.require(:post).permit(:title, :content, :anime_id, :tag_id)
     end
 
 end
