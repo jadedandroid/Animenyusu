@@ -11,6 +11,8 @@ User.destroy_all
 User.reset_pk_sequence
 Post.destroy_all
 Post.reset_pk_sequence 
+Tag.destroy_all
+Tag.reset_pk_sequence
 
 #Anime
 
