@@ -9,6 +9,8 @@ Anime.destroy_all
 Anime.reset_pk_sequence
 User.destroy_all
 User.reset_pk_sequence
+Post.destroy_all
+Post.reset_pk_sequence 
 
 #Anime
 yu_yu_hakusho = Anime.create(name: "Yu Yu Hakusho", description: "Shounen")
@@ -25,3 +27,6 @@ the_seven_deadly_sins = Anime.create(name: "The Seven Deadly Sins", description:
 
 #User
 alex = User.create(username: "Alex", password_digest: "password")
+
+#Posts
+sailor_moon_blog = Post.create(title: "Neptune and Uranus", content: "fan favorites", User_id: 1)
